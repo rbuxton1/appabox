@@ -45,7 +45,7 @@ app.post("/shutdown", function(req, res){
     } else {
       console.log(new Date());
       res.send("System is shutting down NOW. Please wait until the green light blinks and then remains solid.");
-      process.exit(0);
+      neopixels.reset();
     }
   });
 });
