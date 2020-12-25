@@ -1,0 +1,66 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>Appa Box</title>
+  </head>
+  <body>
+    <h1>General Config</h1>
+    <form action="/set" method="post">
+      <table>
+        <tr>
+          <td>Day Color</td>
+          <td><input type="color" name="dayColor" value="<%= config.dayColor %>"></td>
+        </tr>
+        <tr>
+          <td>Night Color</td>
+          <td><input type="color" name="nightColor" value="<%= config.nightColor %>"></td>
+        </tr>
+        <tr>
+          <td>Sun Rise Color</td>
+          <td><input type="color" name="sunRiseColor" value="<%= config.sunRiseColor %>"></td>
+        </tr>
+        <tr>
+          <td>Sun Set Color</td>
+          <td><input type="color" name="sunSetColor" value="<%= config.sunSetColor %>"></td>
+        </tr>
+        <tr>
+          <td>Day Peak</td>
+          <td><input type="number" name="dayPeak" value="<%= config.dayPeak %>"></td>
+        </tr>
+        <tr>
+          <td>Night Peak</td>
+          <td><input type="number" name="nightPeak" value="<%= config.nightPeak %>"></td>
+        </tr>
+        <tr>
+          <td>Sun Rise</td>
+          <td><input type="number" name="sunRise" value="<%= config.sunRise %>"></td>
+        </tr>
+        <tr>
+          <td>Sun Set</td>
+          <td><input type="number" name="sunSet" value="<%= config.sunSet %>"></td>
+        </tr>
+        <tr>
+          <td>Brightness</td>
+          <td><input type="number" name="brightness" value="<%= config.brightness %>"></td>
+        </tr>
+      </table>
+      <input type="submit" name="submit" value="Set">
+    </form>
+
+    <hr>
+    <h1>Time Config</h1>
+    <p><b>Current time is:</b> <%= time %></p>
+    <form action="/settime" method="post">
+      <input type="datetime-local" name="time" value="">
+      <input type="submit" name="submit" value="Sync System Time">
+    </form>
+
+    <hr>
+    <h1>System Control</h1>
+    <form action="/shutdown" method="post">
+      <input type="submit" name="submit" value="Shut system down">
+    </form>
+
+  </body>
+</html>

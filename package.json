@@ -1,0 +1,27 @@
+{
+  "name": "appabox",
+  "version": "1.0.0",
+  "description": "Appa Box Control",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbuxton1/appabox.git"
+  },
+  "author": "Ryan Buxton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbuxton1/appabox/issues"
+  },
+  "homepage": "https://github.com/rbuxton1/appabox#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "color": "^3.1.3",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "rpi-ws281x-native": "^0.10.1",
+    "set-system-clock": "^1.0.4"
+  }
+}
