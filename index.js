@@ -38,14 +38,14 @@ app.post("/settime", function(req, res){
 });
 
 app.post("/shutdown", function(req, res){
+  res.send("System is shutting down NOW. Please wait until the green light blinks and then remains solid.");
+  neopixels.reset();
   exec("shutdown -h now", (err, stdout, stderr) => {
     if(err || stderr){
       console.error(err);
       res.send(err);
     } else {
-      console.log(new Date());
-      res.send("System is shutting down NOW. Please wait until the green light blinks and then remains solid.");
-      neopixels.reset();
+      console.log("Bye");
     }
   });
 });
@@ -87,23 +87,23 @@ setInterval(function(){
   neopixels.setBrightness(parseInt(config.brightness));
 
   if(config.sunRise <= hour && hour < config.dayPeak){
-    console.log("sr -> noon");
+    //console.log("sr -> noon");
     c = fadeColors(config.sunRiseColor, config.dayColor, config.dayPeak - config.sunRise, hour - config.sunRise);
   }
   else if(config.dayPeak <= hour && hour < config.sunSet){
-    console.log("noon -> ss");
+    //console.log("noon -> ss");
     c = fadeColors(config.dayColor, config.sunSetColor, config.sunSet - config.dayPeak, hour - config.dayPeak);
   }
   else if(config.sunSet <= hour && hour < 24){
-    console.log("ss -> night");
+    //console.log("ss -> night");
     c = fadeColors(config.nightColor, config.sunSetColor, 24 - config.sunSet, 24 - hour);
   }
   else if(hour <= config.sunRise){
-    console.log("night -> sr");
+    //console.log("night -> sr");
     c = fadeColors(config.nightColor, config.sunRiseColor, config.sunRise, hour);
   }
 
-  console.log(c);
+  //console.log(c);
   var setAll = (cb) => {
     for(var i = 0; i < NUM_LED; i++){
       //pixels[i] = c.rgb().rgbNumber() >>> 0;

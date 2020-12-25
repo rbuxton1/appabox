@@ -25,23 +25,19 @@
           <td><input type="color" name="sunSetColor" value="<%= config.sunSetColor %>"></td>
         </tr>
         <tr>
-          <td>Day Peak</td>
+          <td>Day Peak <br> <b> 24 hr </b></td>
           <td><input type="number" name="dayPeak" value="<%= config.dayPeak %>"></td>
         </tr>
         <tr>
-          <td>Night Peak</td>
-          <td><input type="number" name="nightPeak" value="<%= config.nightPeak %>"></td>
-        </tr>
-        <tr>
-          <td>Sun Rise</td>
+          <td>Sun Rise <br> <b> 24 hr </b></td>
           <td><input type="number" name="sunRise" value="<%= config.sunRise %>"></td>
         </tr>
         <tr>
-          <td>Sun Set</td>
+          <td>Sun Set <br> <b> 24 hr </b></td>
           <td><input type="number" name="sunSet" value="<%= config.sunSet %>"></td>
         </tr>
         <tr>
-          <td>Brightness</td>
+          <td>Brightness <br> <b> (0-255) </b></td>
           <td><input type="number" name="brightness" value="<%= config.brightness %>"></td>
         </tr>
       </table>
@@ -51,6 +47,9 @@
     <hr>
     <h1>Time Config</h1>
     <p><b>Current time is:</b> <%= time %></p>
+    <p>
+      <i>You will have to use Chrome and will have to set a time before hitting sync!</i>
+    </p>
     <form action="/settime" method="post">
       <input type="datetime-local" name="time" value="">
       <input type="submit" name="submit" value="Sync System Time">
@@ -58,6 +57,9 @@
 
     <hr>
     <h1>System Control</h1>
+    <p>
+      <i>Wait 15 seconds or until the light on the back blinks 5 times and then goes solid.</i>
+    </p>
     <form action="/shutdown" method="post">
       <input type="submit" name="submit" value="Shut system down">
     </form>
